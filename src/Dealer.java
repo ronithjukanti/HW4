@@ -52,7 +52,6 @@ public class Dealer implements Serializable{
                 Vehicle e =new Vehicle(name, year, is4wd, price, mpg);
                 dealerInventory.addInventory(e);
             }
-            //dealerInventory.printInventoryList();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -79,9 +78,7 @@ public class Dealer implements Serializable{
             i.printStackTrace();
         }
         Inventory deserializedInv = SerializationUtils.deserialize(dataToDeserialize);
-/*          for (Vehicle v : deserializedInv.getInventoryList()){
-            v.printVehicle();
-        }*/
+
     }
     public void printDealer(){
         for (Vehicle v : dealerInventory.getInventoryList()) {

@@ -3,9 +3,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- * Created by Shawn on 9/21/2016.
- */
 
 public class TruckTest {
     private Truck happyTruck;
@@ -15,37 +12,29 @@ public class TruckTest {
 
     @Before
     public  void Setup(){
-        happyTruck = new Truck("Ford F150", 2013, true, 35000, 14, true, 22000);
-        truckWithStep = new Truck ("Chevy 3500", 2014, true, 43000, 14,true, 32000);
-        truckWithoutStep = new Truck ("Ford Ranger", 1978, false, 2500, 32, false, 4000);
+        happyTruck = new Truck("Ford Fiesta", 2013, false, 45600, 17, true, 7890);
+        truckWithStep = new Truck ("Tata Indigo", 2015, true, 78900, 14,false, 45600);
+        truckWithoutStep = new Truck ("Nissan GT", 1999, false, 1230, 32, false, 78950);
     }
 
     @After
     public void cleanUpEverytime(){
-        System.out.println("Cleaning up...");
+        System.out.println("Cleaning up");
     }
 
     @Test
     public void testHappyCase(){
 
-        String name = "Ford F150";
-        int year = 2013;
-        int price = 35000;
+        String name = "Ford Fiesta";
+        int year = 2012;
+        int price = 456;
         boolean isStepSide = true;
-        boolean is4WD = true;
-        int mpg = 14;
-        int towCap=22000;
+        boolean is4WD = false;
+        int mpg = 17;
+        int towCap=12300;
 
-
-        //Given
-
-        //happyTruck = new Truck("Ford F150", 2013, true, 35000, 14, true, 22000);
-
-
-        //When
         happyTruck.printVehicle();
 
-        //Then
         Assert.assertEquals("Model mismatch", name, happyTruck.getName());
         Assert.assertEquals("year mismatch", year, happyTruck.getYear());
         Assert.assertEquals("mpg mismatch", mpg, happyTruck.getMPG());
@@ -58,39 +47,23 @@ public class TruckTest {
 
     public void testTruckNoStep(){
 
-        String name = "Ford Ranger";
-        boolean isStepside = false;
+        String name = "Mustang GT";
+        boolean isStepside = true;
 
-
-        //Given
-
-        //truckWithoutStep = new Truck ("Ford Ranger", 1978, false, 2500, 32, false, 4000);
-
-
-        //When
         truckWithoutStep.printVehicle();
 
-        //Then
         Assert.assertEquals("Model mismatch", name, truckWithoutStep.getName());
         Assert.assertEquals("StepSide mismatch", isStepside, truckWithoutStep.isStepSide());
     }
 
-
     @Test
     public void testTruckWithConv(){
 
-        String name = "Chevy 3500";
+        String name = "Chevrolet 123";
         boolean isStepside = true;
 
-
-        //Given
-
-        //truckWithStep = new Truck ("Chevy 3500", 2014, true, 43000, 14,true, 32000);
-
-        //When
         truckWithStep.printVehicle();
 
-        //Then
         Assert.assertEquals("Model mismatch", name, truckWithStep.getName());
         Assert.assertEquals("StepSide mismatch", isStepside, truckWithStep.isStepSide());
     }

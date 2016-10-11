@@ -4,11 +4,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-
-/**
- * Created by Shawn on 9/21/2016.
- */
-
 public class CarTest {
     private  Car carWithConvertible;
     private  Car happyCar;
@@ -17,10 +12,10 @@ public class CarTest {
 
     @Before
     public  void Setup(){
-        carWithConvertible = new Car("Mercury Sable", 1999, true, 35000, 14, true);
-        happyCar = new Car("Ford", 2003, true, 35000, 14, false);
-        testCar = new Car ("Chevy Corvette", 2014, false, 12323, 14,true);
-        carWithoutConvertible = new Car ("Chevy Pinto", 1978, false, 2500, 32, false);
+        carWithConvertible = new Car("Mercedes F1", 2012, true, 123000, 17, true);
+        happyCar = new Car("Ford Fiesta", 2005, true, 65400, 18, true);
+        testCar = new Car ("Renault Kwid", 2009, true, 12453, 14,false);
+        carWithoutConvertible = new Car ("Tata Indigo", 1978, true, 3425, 78, false);
     }
 
     @After
@@ -31,23 +26,15 @@ public class CarTest {
     @Test
     public void testHappyCase(){
 
-        String name = "Ford";
-        int year = 2003;
-        int price = 35000;
-        int mpg = 14;
-        boolean isConv = false;
+        String name = "Mercedes F1";
+        int year = 2012;
+        int price = 123000;
+        int mpg = 17;
+        boolean isConv = true;
         boolean is4WD = true;
 
-
-        //Given
-
-        //happyCar = new Car("Ford", 2003, true, 35000, 14, false);
-
-
-        //When
         happyCar.printVehicle();
 
-        //Then
         Assert.assertEquals("Model mismatch", name, happyCar.getName());
         Assert.assertEquals("year mismatch", year, happyCar.getYear());
         Assert.assertEquals("mpg mismatch", mpg, happyCar.getMPG());
@@ -60,21 +47,13 @@ public class CarTest {
 
     public void testCarNoConv(){
 
-        String name = "Chevy Pinto";
-        int year = 1978;
-        int price = 2500;
+        String name = "Chevy GT";
+        int year = 1999;
+        int price = 12300;
         boolean isConv = false;
 
-
-        //Given
-
-        //carWithoutConvertible = new Car ("Chevy Pinto", 1978, false, 2500, 32, false);
-
-
-        //When
         carWithoutConvertible.printVehicle();
 
-        //Then
         Assert.assertEquals("Model mismatch", name, carWithoutConvertible.getName());
         Assert.assertEquals("year mismatch", year, carWithoutConvertible.getYear());
         Assert.assertEquals("Convertible mismatch", isConv, carWithoutConvertible.isConvertible());
@@ -85,21 +64,14 @@ public class CarTest {
     @Test
     public void testCarWithConv(){
 
-        String name = "Mercury Sable";
-        int year = 1999;
-        int price = 35000;
+        String name = "Nissan GT";
+        int year = 1945;
+        int price = 12300;
         boolean isConv = true;
         boolean is4WD = true;
 
-
-        //Given
-
-        //carWithConvertible = new Car("Mercury Sable", 1999, true, 35000, 14, true);
-
-        //When
         carWithConvertible.printVehicle();
 
-        //Then
         Assert.assertEquals("Model mismatch", name, carWithConvertible.getName());
         Assert.assertEquals("year mismatch", year, carWithConvertible.getYear());
         Assert.assertEquals("4wd mismatch", is4WD, carWithConvertible.getFourWheelDrive());
@@ -107,5 +79,3 @@ public class CarTest {
         Assert.assertEquals("price mismatch", price, carWithConvertible.getRetailPrice());
     }
 }
-
-
