@@ -62,7 +62,7 @@ public class InventoryTest {
     @Test
     public void testPrintAveragePrice() {
         Vehicle v = new Vehicle("Chevy Cruiser", 2010, true, 35000, 14);
-        Vehicle v2 = new Vehicle("Chevy 3500", 2014, true, 43000, 14);
+        Vehicle v2 = new Vehicle("Chevy 35000", 2014, true, 43000, 14);
         Vehicle v3 = new Vehicle("Ford Focus", 2000, false, 12000, 30);
 
         happyInventory.addInventory(v);
